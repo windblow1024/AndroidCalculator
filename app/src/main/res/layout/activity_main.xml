@@ -5,11 +5,26 @@
     android:layout_height="match_parent"
     android:background="#1C1C1E">
 
+    <!-- Expression Display -->
+    <TextView
+        android:id="@+id/expressionText"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:gravity="end|center_vertical"
+        android:paddingHorizontal="24dp"
+        android:text=""
+        android:textColor="#8E8E93"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/displayText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <!-- Display Area -->
     <TextView
         android:id="@+id/displayText"
         android:layout_width="0dp"
-        android:layout_height="120dp"
+        android:layout_height="80dp"
         android:gravity="end|center_vertical"
         android:paddingHorizontal="24dp"
         android:text="0"
@@ -18,7 +33,7 @@
         app:layout_constraintBottom_toTopOf="@id/btnClear"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/expressionText" />
 
     <!-- Row 0: Clear, Negate, Percent, Divide -->
     <Button
@@ -192,7 +207,7 @@
         android:layout_width="0dp"
         android:text="2"
         app:backgroundColor="@color/numberButton"
-        app:layout_constraintBottom_toTopOf="@id/btnBackspace"
+        app:layout_constraintBottom_toTopOf="@id/btnDecimal"
         app:layout_constraintEnd_toStartOf="@id/btn3"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toEndOf="@id/btn1"
@@ -204,7 +219,7 @@
         android:layout_width="0dp"
         android:text="3"
         app:backgroundColor="@color/numberButton"
-        app:layout_constraintBottom_toTopOf="@id/btnEquals"
+        app:layout_constraintBottom_toTopOf="@id/btnBackspace"
         app:layout_constraintEnd_toStartOf="@id/btnAdd"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toEndOf="@id/btn2"
@@ -223,7 +238,7 @@
         app:layout_constraintStart_toEndOf="@id/btn3"
         app:layout_constraintTop_toBottomOf="@id/btnSubtract" />
 
-    <!-- Row 4: 0 (span 2), Backspace, Equals -->
+    <!-- Row 4: 0, ., ⌫, = -->
     <Button
         android:id="@+id/btn0"
         style="@style/CalculatorButton"
@@ -231,8 +246,8 @@
         android:text="0"
         app:backgroundColor="@color/numberButton"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/btnBackspace"
-        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintEnd_toStartOf="@id/btnDecimal"
+        app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn1" />
 
@@ -242,11 +257,11 @@
         android:layout_width="0dp"
         android:text="."
         app:backgroundColor="@color/numberButton"
-        app:layout_constraintBottom_toTopOf="@id/btnBackspace"
-        app:layout_constraintEnd_toStartOf="@id/btnEquals"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnBackspace"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toEndOf="@id/btn0"
-        app:layout_constraintTop_toBottomOf="@id/btn1" />
+        app:layout_constraintTop_toBottomOf="@id/btn2" />
 
     <Button
         android:id="@+id/btnBackspace"
@@ -259,7 +274,7 @@
         app:layout_constraintEnd_toStartOf="@id/btnEquals"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toEndOf="@id/btnDecimal"
-        app:layout_constraintTop_toBottomOf="@id/btn2" />
+        app:layout_constraintTop_toBottomOf="@id/btn3" />
 
     <Button
         android:id="@+id/btnEquals"
