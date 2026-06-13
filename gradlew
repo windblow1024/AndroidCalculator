@@ -77,7 +77,7 @@ if [ "$cygwin" = "true" -o "$msys" = "true" ] ; then
 fi
 
 # Add default JVM options here.
-DEFAULT_JVM_OPTS='"-Xmx64m" "-Xms64m"'
+DEFAULT_JVM_OPTS='-Xmx64m -Xms64m'
 
 exec "$JAVACMD" \
     $DEFAULT_JVM_OPTS \
